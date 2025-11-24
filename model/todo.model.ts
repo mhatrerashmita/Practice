@@ -5,6 +5,7 @@ import aggregatePaginate from "mongoose-aggregate-paginate-v2";
 interface Itodolist extends Document {
   text: string;
   done: boolean;
+  isimportant?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -17,6 +18,11 @@ const todoSchema = new Schema<Itodolist>(
       type: Boolean,       // REQUIRED
       default: false,
       required: true
+    },
+     isimportant: {
+      type: Boolean,       // REQUIRED
+      default: false,
+      required: false
     },
 
     createdAt: { type: Schema.Types.Date, default: Date.now },

@@ -3,6 +3,7 @@ import { IPagination } from '../common/dto.common';
 interface ITodo {
  text: string;
   done: boolean;
+  isimpoertant?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }

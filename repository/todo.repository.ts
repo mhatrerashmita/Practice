@@ -40,7 +40,8 @@ updateTodo(taskid: string, updateData: Partial<Itodolist>): Promise<Itodolist | 
         return this.todoListModel.findByIdAndUpdate({_id : taskid},{
             $set:{
                 text : updateData.text,
-                done : updateData.done
+                done : updateData.done,
+                isimportant : updateData.isimportant
             }
         });
     }

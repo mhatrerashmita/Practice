@@ -40,6 +40,7 @@ const updatetodo = async (
   const tododata: Partial<Itodolist> = {
     text: data.text,
     done: data.done,
+    isimportant: data.isimportant,
   };
 
   // Find the todo by ID
