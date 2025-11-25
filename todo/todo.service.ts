@@ -5,19 +5,29 @@ import { Itodolist } from "../model/todo.model";
 import { ICommonAggregateResponse, ICommonMessageResponse } from "../common/responce.common";
 import mongoose, { ObjectId } from "mongoose";
 import { IPagination } from "../common/dto.common";
+import * as chrono from "chrono-node";
+
+
 
 const createNewTodo = async (
   data: ITodo
 ): Promise<{ message: string; status: boolean }> => {
  // create repo instance
+ const text = data.text;
+  const parsedDate: Date | undefined = chrono.parseDate(data.text) ?? undefined;
+console.log('Parsed Date:', parsedDate);
 
   await todolistmodel.createNewTodo({
     ...data,
+     reminded: false,        
+    reminderAt: parsedDate,
   });
+
 
   return {
     message: "Todo added successfully",
     status: true,
+    
   };
 };
 

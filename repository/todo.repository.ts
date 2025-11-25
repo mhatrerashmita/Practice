@@ -7,6 +7,7 @@ import { IPagination } from "../common/dto.common";
 
 
 class TodoListRepo implements ITodoRepository {
+  
     private todoListModel: AggregatePaginateModel<Itodolist>;
 
     constructor(todoListModel: AggregatePaginateModel<Itodolist>) {

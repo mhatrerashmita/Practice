@@ -6,6 +6,8 @@ interface Itodolist extends Document {
   text: string;
   done: boolean;
   isimportant?: boolean;
+  reminded?:boolean;
+  reminderAt?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -24,6 +26,11 @@ const todoSchema = new Schema<Itodolist>(
       default: false,
       required: false
     },
+     reminded: {
+      type: Boolean,       // REQUIRED
+      default: false,
+    },
+     reminderAt: { type: Schema.Types.Date},
 
     createdAt: { type: Schema.Types.Date, default: Date.now },
     updatedAt: { type: Schema.Types.Date, default: Date.now },

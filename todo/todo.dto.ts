@@ -4,6 +4,8 @@ interface ITodo {
  text: string;
   done: boolean;
   isimpoertant?: boolean;
+  reminded: { type: Boolean, default: false }
+  reminderAt?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
