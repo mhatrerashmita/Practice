@@ -9,7 +9,11 @@ import  Itodolist  from "./model/todo.model"
 const app = express();
 
 // Enable CORS for all origins (development)
-app.use(cors());
+app.use(cors({
+  origin: "*",   // or your vercel domain
+  credentials: true
+}));
+
 
 // Parse JSON body
 app.use(express.json());
