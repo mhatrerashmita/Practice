@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "dev": "nodemon app.ts"
-  },
+"scripts": {
+  "build": "tsc",
+  "start": "node dist/app.js",
+  "dev": "nodemon app.ts",
+  "postinstall": "npm run build"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
